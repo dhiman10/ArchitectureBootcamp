@@ -19,9 +19,16 @@ class DataManager {
     func getProducts() async throws -> [Product] {
         try await service.getProducts()
     }
+    
+    func getMovies() async throws -> [String] {
+        ["Movies"]
+    }
 }
 
 @Observable
 @MainActor
 class UserManager {
+    func getUser() async throws -> String {
+        ""
+    }
 }

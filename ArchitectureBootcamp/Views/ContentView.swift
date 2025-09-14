@@ -28,6 +28,6 @@ struct ContentView: View {
     container.register(DataManager.self, service: DataManager(service: MockDataService()))
     container.register(UserManager.self, service: UserManager())
 
-    return ContentView(viewModel: ContentViewModel(container: container))
+    return ContentView(viewModel: ContentViewModel(interactor: ProductionContentViewModelInteractor(container: container)))
     
 }
