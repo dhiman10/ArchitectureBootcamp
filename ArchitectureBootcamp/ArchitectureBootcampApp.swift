@@ -9,9 +9,17 @@ import SwiftUI
 
 @main
 struct ArchitectureBootcampApp: App {
+    
+    let container: DependencyContainer = {
+        let c = DependencyContainer()
+        c.register(DataManager.self, service: DataManager(service: MockDataService()))
+        c.register(UserManager.self, service: UserManager())
+        return c
+    }()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(viewModel: ContentViewModel(container: container))
         }
     }
 }
