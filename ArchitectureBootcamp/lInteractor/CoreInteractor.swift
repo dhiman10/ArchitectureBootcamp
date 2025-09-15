@@ -9,11 +9,23 @@
 protocol ContentViewModelInteractor {
     func getProducts() async throws -> [Product]
     func getUser() async throws -> String
-
 }
+extension CoreInteractor: ContentViewModelInteractor { }
+
+protocol HomeViewModelInteractor {
+    func getMovies() async throws -> [String]
+    func getUser() async throws -> String
+}
+extension CoreInteractor: HomeViewModelInteractor { }
+
+protocol SettingsViewModelInteractor {
+    func getUser() async throws -> String
+    func getMovies() async throws -> [String]
+}
+extension CoreInteractor: SettingsViewModelInteractor { }
 
 @MainActor
-struct ProductionContentViewModelInteractor: ContentViewModelInteractor {
+struct CoreInteractor {
     
     let dataManager: DataManager
     let userManager: UserManager
@@ -27,22 +39,12 @@ struct ProductionContentViewModelInteractor: ContentViewModelInteractor {
         try await dataManager.getProducts()
     }
     
+    func getMovies() async throws -> [String] {
+        try await dataManager.getMovies()
+    }
+    
     func getUser() async throws -> String {
         try await userManager.getUser()
     }
-    
 }
 
-@MainActor
-struct MockContentViewModelInteractor: ContentViewModelInteractor {
-    
-    func getProducts() async throws -> [Product] {
-        [
-            Product(id: 1, title: "This is my first product!")
-        ]
-    }
-    
-    func getUser() async throws -> String {
-        ""
-    }
-}

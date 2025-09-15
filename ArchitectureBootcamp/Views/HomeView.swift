@@ -1,19 +1,21 @@
 //
-//  ContentView.swift
+//  HomeView.swift
 //  ArchitectureBootcamp
 //
-//  Created by Dhiman Das on 13.09.25.
+//  Created by Dhiman Das on 15.09.25.
 //
 
 import SwiftUI
 
-struct ContentView: View {
-    @State var viewModel: ContentViewModel
+struct HomeView: View {
     
+    @State var viewModel: HomeViewModel
+
     var body: some View {
         VStack {
-            ForEach(viewModel.products) { product in
-                Text(product.title)
+            ForEach(viewModel.movies, id: \.self) { movie in
+                Text(movie)
+                    .foregroundStyle(.green)
             }
         }
         .padding()
@@ -23,16 +25,13 @@ struct ContentView: View {
     }
 }
 
-
-
-
 #Preview {
     let container = DependencyContainer()
     container.register(DataManager.self, service: DataManager(service: MockDataService()))
     container.register(UserManager.self, service: UserManager())
 
-    return ContentView(
-        viewModel: ContentViewModel(interactor: CoreInteractor(container: container))
-    )
+        return HomeView(
+            viewModel: HomeViewModel(interactor: CoreInteractor(container: container))
+        )
     
 }

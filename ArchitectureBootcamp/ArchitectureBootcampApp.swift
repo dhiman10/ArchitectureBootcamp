@@ -19,7 +19,7 @@ struct ArchitectureBootcampApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView(viewModel: ContentViewModel(interactor: ProductionContentViewModelInteractor(container: container)))
+            ContentView(viewModel: ContentViewModel(interactor: CoreInteractor(container: container)))
         }
     }
 }
