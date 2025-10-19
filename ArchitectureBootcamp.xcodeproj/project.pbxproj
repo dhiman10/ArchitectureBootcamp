@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		6AA604F82EA55BFB00FCADB9 /* CustomRouting in Frameworks */ = {isa = PBXBuildFile; productRef = 6AA604F72EA55BFB00FCADB9 /* CustomRouting */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		6AC85B072E75ABE400AAC8C3 /* ArchitectureBootcamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArchitectureBootcamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AA604F82EA55BFB00FCADB9 /* CustomRouting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +70,7 @@
 			);
 			name = ArchitectureBootcamp;
 			packageProductDependencies = (
+				6AA604F72EA55BFB00FCADB9 /* CustomRouting */,
 			);
 			productName = ArchitectureBootcamp;
 			productReference = 6AC85B072E75ABE400AAC8C3 /* ArchitectureBootcamp.app */;
@@ -94,6 +100,9 @@
 			);
 			mainGroup = 6AC85AFE2E75ABE400AAC8C3;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				6AA604F62EA55BFB00FCADB9 /* XCRemoteSwiftPackageReference "CustomRouting" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 6AC85B082E75ABE400AAC8C3 /* Products */;
 			projectDirPath = "";
@@ -340,6 +349,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6AA604F62EA55BFB00FCADB9 /* XCRemoteSwiftPackageReference "CustomRouting" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dhiman10/CustomRouting.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6AA604F72EA55BFB00FCADB9 /* CustomRouting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6AA604F62EA55BFB00FCADB9 /* XCRemoteSwiftPackageReference "CustomRouting" */;
+			productName = CustomRouting;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6AC85AFF2E75ABE400AAC8C3 /* Project object */;
 }

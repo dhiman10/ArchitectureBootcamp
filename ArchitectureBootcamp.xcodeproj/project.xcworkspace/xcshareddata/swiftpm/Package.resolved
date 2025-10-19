@@ -1,0 +1,15 @@
+{
+  "originHash" : "d3ce2f56bfdf97b6e4148436fcaab6c40703600fa5edd1bfdac2f057e69baa2d",
+  "pins" : [
+    {
+      "identity" : "customrouting",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/dhiman10/CustomRouting.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "d1534364570dedc2fae49c4763b0c9a552dc21c5"
+      }
+    }
+  ],
+  "version" : 3
+}
